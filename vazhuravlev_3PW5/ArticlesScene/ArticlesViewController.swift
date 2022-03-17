@@ -19,6 +19,7 @@ class ArticlesViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupTableView()
+        interactor.fetchNews()
         // Do any additional setup after loading the view.
     }
     
@@ -36,6 +37,8 @@ class ArticlesViewController: UIViewController {
     }
 }
 
+
+// MARK: - UITableViewDelegate & DataSource implementation
 extension ArticlesViewController: UITableViewDelegate { }
 
 extension ArticlesViewController: UITableViewDataSource {
@@ -45,5 +48,13 @@ extension ArticlesViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         return UITableViewCell()
+    }
+}
+
+
+// MARK: - ArticlesDisplayLogic implementation
+extension ArticlesViewController: ArticlesDisplayLogic {
+    func displayNews(articles: [ArticleCellModel]) {
+        
     }
 }

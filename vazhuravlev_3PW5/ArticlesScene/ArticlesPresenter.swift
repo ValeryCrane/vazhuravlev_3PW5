@@ -13,6 +13,14 @@ protocol ArticlesPresentationLogic: AnyObject {
 }
 
 class ArticlesPresenter {
-    public var view: ArticlesDisplayLogic!
+    public weak var view: ArticlesDisplayLogic!
     
+}
+
+
+// MARK: - ArticlesPresentationLogic implementation
+extension ArticlesPresenter: ArticlesPresentationLogic {
+    func presentNews(articles: [ArticleModel]) {
+        print(articles)
+    }
 }

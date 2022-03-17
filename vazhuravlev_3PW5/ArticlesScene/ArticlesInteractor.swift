@@ -12,14 +12,28 @@ protocol ArticleDataStore: AnyObject {
 }
 
 protocol ArticlesBusinessLogic: AnyObject {
-    
+    func fetchNews()
 }
 
 class ArticlesInteractor: ArticleDataStore {
     public var presenter: ArticlesPresentationLogic!
+    private var worker = ArticleWorker()
+    
     public var articles: [ArticleModel] = [] {
         didSet {
             presenter.presentNews(articles: articles)
         }
+    }
+    
+    init() {
+        worker.delegate = self
+    }
+}
+
+
+// MARK: - ArticlesBusinessLogic implementation
+extension ArticlesInteractor: ArticlesBusinessLogic {
+    func fetchNews() {
+        worker.fetchNews()
     }
 }

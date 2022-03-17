@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct ArticleModel {
+struct ArticleModel: Decodable {
     var newsId: Int?
     var title: String?
     var announce: String?
@@ -23,6 +23,6 @@ struct ArticleModel {
     }
 }
 
-struct ImageModel {
+struct ImageModel: Decodable {
     var url: URL?
 }

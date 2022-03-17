@@ -7,3 +7,5 @@
 - Created ArticleInteractor, that stores an array of articles in a property (get, set etc.).
 
 - Loading articles from provided API and printing them in console.
+
+- Filled tableView with news cells that have an image, title and description.

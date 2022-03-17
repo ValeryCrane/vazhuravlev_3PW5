@@ -8,6 +8,7 @@
 import Foundation
 import UIKit
 
+// Assembles article views.
 class ArticlesAssembly {
     func assemble() -> UIViewController {
         let view = ArticlesViewController()

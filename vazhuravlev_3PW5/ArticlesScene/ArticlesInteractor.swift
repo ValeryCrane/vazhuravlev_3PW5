@@ -12,7 +12,7 @@ protocol ArticleDataStore: AnyObject {
 }
 
 protocol ArticlesBusinessLogic: AnyObject {
-    func fetchNews()
+    func fetchNews()                            // Fetches news from ArticleWorker
 }
 
 class ArticlesInteractor: ArticleDataStore {
@@ -22,11 +22,29 @@ class ArticlesInteractor: ArticleDataStore {
     public var articles: [ArticleModel] = [] {
         didSet {
             presenter.presentNews(articles: articles)
+            
+            // Loading images.
+            for article in articles {
+                DispatchQueue.global().async { [weak self] in
+                    let imageData = self?.loadImage(url: article.img?.url)
+                    if let imageData = imageData, let newsId = article.newsId {
+                        self?.presenter.presentImage(data: imageData, newsId: newsId)
+                    }
+                }
+            }
         }
     }
     
     init() {
         worker.delegate = self
+    }
+    
+    // Loads image from URL.
+    private func loadImage(url: URL?) -> Data? {
+        if let url = url {
+            return try? Data(contentsOf: url)
+        }
+        return nil
     }
 }
 

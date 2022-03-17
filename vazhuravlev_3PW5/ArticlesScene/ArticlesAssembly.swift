@@ -14,10 +14,13 @@ class ArticlesAssembly {
         let view = ArticlesViewController()
         let interactor = ArticlesInteractor()
         let presenter = ArticlesPresenter()
+        let router = ArticlesRouter()
         
         view.interactor = interactor
         interactor.presenter = presenter
         presenter.view = view
+        router.view = view
+        view.router = router
         
         return view
     }

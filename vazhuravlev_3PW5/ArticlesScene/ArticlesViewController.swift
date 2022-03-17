@@ -15,6 +15,7 @@ protocol ArticlesDisplayLogic: AnyObject {
 
 class ArticlesViewController: UIViewController {
     public var interactor: ArticlesBusinessLogic!
+    public var router: ArticlesRoutingLogic!
     
     private var tableView: UITableView?
     private var articles: [ArticleCellModel] = [] {
@@ -53,7 +54,12 @@ class ArticlesViewController: UIViewController {
 
 
 // MARK: - UITableViewDelegate & DataSource implementation
-extension ArticlesViewController: UITableViewDelegate { }
+extension ArticlesViewController: UITableViewDelegate {
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: false)
+        router.routeToWebView(url: articles[indexPath.row].articleUrl)
+    }
+}
 
 extension ArticlesViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

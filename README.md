@@ -9,3 +9,5 @@
 - Loading articles from provided API and printing them in console.
 
 - Filled tableView with news cells that have an image, title and description.
+
+- Pressing on a cell leads to an article opening on a new screen via webView.

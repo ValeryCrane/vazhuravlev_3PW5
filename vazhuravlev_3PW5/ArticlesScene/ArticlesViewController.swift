@@ -1,5 +1,5 @@
 //
-//  ArticleViewController.swift
+//  ArticlesViewController.swift
 //  vazhuravlev_3PW5
 //
 //  Created by Валерий Журавлев on 17.03.2022.
@@ -7,7 +7,8 @@
 
 import UIKit
 
-class ArticleViewController: UIViewController {
+
+class ArticlesViewController: UIViewController {
     private var tableView: UITableView?
 
     override func viewDidLoad() {
@@ -30,9 +31,9 @@ class ArticleViewController: UIViewController {
     }
 }
 
-extension ArticleViewController: UITableViewDelegate { }
+extension ArticlesViewController: UITableViewDelegate { }
 
-extension ArticleViewController: UITableViewDataSource {
+extension ArticlesViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         1
     }
@@ -40,6 +41,4 @@ extension ArticleViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         return UITableViewCell()
     }
-    
-    
 }

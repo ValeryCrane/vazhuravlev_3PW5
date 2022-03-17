@@ -15,7 +15,6 @@ class ArticleWorker {
         guard let url = getURL(rubric: 4, pageIndex: 1) else { return }
         URLSession.shared.dataTask(with: url) { [weak self] data, responce, error in
             if let error = error {
-                print("Avtobus")
                 print(error)
                 return
             }

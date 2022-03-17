@@ -11,3 +11,5 @@
 - Filled tableView with news cells that have an image, title and description.
 
 - Pressing on a cell leads to an article opening on a new screen via webView.
+
+- Integrated a “share” button when news cell is swiped to the left.

@@ -10,6 +10,7 @@ import UIKit
 
 protocol ArticlesRoutingLogic: AnyObject {
     func routeToWebView(url: URL)               // Routes to webview with given URL.
+    func routeToShareSheet(url: URL)            // Routes to menu for sharing a URL.
 }
 
 class ArticlesRouter {
@@ -23,5 +24,10 @@ extension ArticlesRouter: ArticlesRoutingLogic {
         webViewController.articleUrl = url
         webViewController.title = "Article"
         view.navigationController?.pushViewController(webViewController, animated: true)
+    }
+    
+    func routeToShareSheet(url: URL) {
+        let shareSheet = UIActivityViewController(activityItems: [url], applicationActivities: nil)
+        view.present(shareSheet, animated: true)
     }
 }

@@ -18,38 +18,33 @@ class ArticleCell: UITableViewCell {
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
-        self.backgroundColor = .systemGray5
+        self.backgroundColor = .white
         
-        let wrapper = UIView()
-        wrapper.backgroundColor = .white
-        self.contentView.addSubview(wrapper)
-        wrapper.pin(to: self.contentView, .top, .left, .right)
-        wrapper.pinBottom(to: self.contentView.bottomAnchor, 32)
-        wrapper.layer.shadowColor = UIColor.black.cgColor
-        wrapper.layer.shadowOpacity = 0.2
-        wrapper.layer.shadowOffset = .zero
-        wrapper.layer.shadowRadius = 3
+        self.layer.shadowColor = UIColor.black.cgColor
+        self.layer.shadowOpacity = 0.2
+        self.layer.shadowOffset = .zero
+        self.layer.shadowRadius = 3
         
-        wrapper.addSubview(articleImage)
-        articleImage.pin(to: wrapper, .left, .top, .right)
+        self.addSubview(articleImage)
+        articleImage.pin(to: self, .left, .top, .right)
         articleImage.setHeight(to: 150)
         articleImage.backgroundColor = .systemGray6
         articleImage.contentMode = .scaleAspectFill
         articleImage.clipsToBounds = true
         
-        wrapper.addSubview(titleLabel)
-        titleLabel.pinTop(to: articleImage.bottomAnchor, 8)
-        titleLabel.pinLeft(to: wrapper.leadingAnchor, 16)
-        titleLabel.pinRight(to: wrapper.trailingAnchor, 16)
-        titleLabel.font = .systemFont(ofSize: 24, weight: .black)
+        self.addSubview(titleLabel)
+        titleLabel.pinTop(to: articleImage.bottomAnchor, 16)
+        titleLabel.pinLeft(to: self.leadingAnchor, 24)
+        titleLabel.pinRight(to: self.trailingAnchor, 24)
+        titleLabel.font = .systemFont(ofSize: 24, weight: .bold)
         
-        wrapper.addSubview(descriptionLabel)
+        self.addSubview(descriptionLabel)
         descriptionLabel.pinTop(to: titleLabel.bottomAnchor, 8)
-        descriptionLabel.pinLeft(to: wrapper.leadingAnchor, 16)
-        descriptionLabel.pinRight(to: wrapper.trailingAnchor, 16)
-        descriptionLabel.pinBottom(to: wrapper.bottomAnchor, 8)
+        descriptionLabel.pinLeft(to: self.leadingAnchor, 24)
+        descriptionLabel.pinRight(to: self.trailingAnchor, 23)
+        descriptionLabel.pinBottom(to: self.bottomAnchor, 16)
         descriptionLabel.font = .systemFont(ofSize: 16, weight: .light)
-        descriptionLabel.numberOfLines = 3
+        descriptionLabel.numberOfLines = 2
     }
     
     required init?(coder: NSCoder) {
@@ -71,3 +66,4 @@ class ArticleCell: UITableViewCell {
         }
     }
 }
+

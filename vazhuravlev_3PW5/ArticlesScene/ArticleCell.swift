@@ -60,8 +60,18 @@ class ArticleCell: UITableViewCell {
     
     public func setupImage(image: UIImage?) {
         if let image = image {
+            articleImage.layer.removeAllAnimations()
             articleImage.image = image
         } else {
+            let animation = CABasicAnimation(keyPath: "backgroundColor")
+            animation.fromValue = UIColor.systemGray4.cgColor
+            animation.toValue = UIColor.systemGray6.cgColor
+            animation.duration = 0.8
+            animation.repeatCount = .greatestFiniteMagnitude
+            animation.autoreverses = true
+            
+            articleImage.layer.add(animation, forKey: "backgroundColor")
+            
             articleImage.image = UIImage()
         }
     }

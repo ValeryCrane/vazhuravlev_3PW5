@@ -15,3 +15,5 @@
 - Integrated a “share” button when news cell is swiped to the left.
 
 - Using Clean architecture.
+
+- Add basic shimmers to loading photos.

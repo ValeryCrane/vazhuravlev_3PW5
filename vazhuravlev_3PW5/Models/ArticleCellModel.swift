@@ -6,11 +6,13 @@
 //
 
 import Foundation
+import UIKit
 
+// Presented (result of func presentArticles) model.
 struct ArticleCellModel {
     let id: Int
     let title: String
     let description: String
     let articleUrl: URL
-    var image: Data?
+    var image: UIImage?
 }

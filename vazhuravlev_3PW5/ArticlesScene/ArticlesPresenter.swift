@@ -6,7 +6,7 @@
 //
 
 import Foundation
-
+import UIKit
 
 protocol ArticlesPresentationLogic: AnyObject {
     func presentNews(articles: [ArticleModel])          // Presents news into ArticleCellModel.
@@ -43,7 +43,8 @@ extension ArticlesPresenter: ArticlesPresentationLogic {
     
     func presentImage(data: Data, newsId: Int) {
         DispatchQueue.main.async { [weak self] in
-            self?.view.displayImage(data: data, newsId: newsId)
+            guard let image = UIImage(data: data) else { return }
+            self?.view.displayImage(image: image, newsId: newsId)
         }
     }
 }

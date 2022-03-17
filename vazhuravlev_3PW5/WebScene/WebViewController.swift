@@ -12,7 +12,7 @@ import WebKit
 // WebView opening url, passed to it.
 class WebViewController: UIViewController {
     public var articleUrl: URL?
-    
+     
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .white
@@ -22,6 +22,7 @@ class WebViewController: UIViewController {
         webView.pinBottom(to: view.safeAreaLayoutGuide.bottomAnchor)
         webView.pin(to: view, .left, .right)
         
+        // Loading page.
         if let articleUrl = self.articleUrl {
             webView.load(URLRequest(url: articleUrl))
         }

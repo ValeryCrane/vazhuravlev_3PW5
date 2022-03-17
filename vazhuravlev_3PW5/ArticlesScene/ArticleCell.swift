@@ -58,9 +58,9 @@ class ArticleCell: UITableViewCell {
         descriptionLabel.text = description
     }
     
-    public func setupImage(data: Data?) {
-        if let data = data {
-            articleImage.image = UIImage(data: data)
+    public func setupImage(image: UIImage?) {
+        if let image = image {
+            articleImage.image = image
         } else {
             articleImage.image = UIImage()
         }

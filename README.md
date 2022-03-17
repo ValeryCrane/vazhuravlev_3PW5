@@ -13,3 +13,5 @@
 - Pressing on a cell leads to an article opening on a new screen via webView.
 
 - Integrated a “share” button when news cell is swiped to the left.
+
+- Using Clean architecture.

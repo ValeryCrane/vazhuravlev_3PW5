@@ -9,8 +9,8 @@ import UIKit
 
 
 protocol ArticlesDisplayLogic: AnyObject {
-    func displayNews(articles: [ArticleCellModel])      // Displays news with titles and descriptions.
-    func displayImage(data: Data, newsId: Int)          // Displays image for news id.
+    func displayNews(articles: [ArticleCellModel])          // Displays news with titles and descriptions.
+    func displayImage(image: UIImage, newsId: Int)          // Displays image for news id.
 }
 
 class ArticlesViewController: UIViewController {
@@ -20,6 +20,8 @@ class ArticlesViewController: UIViewController {
     private var tableView: UITableView?
     private var articles: [ArticleCellModel] = []
 
+    
+    // MARK: - ViewController's life cycle
     override func viewDidLoad() {
         super.viewDidLoad()
         self.title = "News"
@@ -29,6 +31,8 @@ class ArticlesViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
     
+    
+    // MARK: - setup functions
     private func setupTableView() {
         let tableView = UITableView()
         
@@ -91,7 +95,7 @@ extension ArticlesViewController: UITableViewDataSource {
             withIdentifier: ArticleCell.reuseIdentifier) as? ArticleCell
         cell?.setupText(title: articles[indexPath.section].title,
                         description: articles[indexPath.section].description)
-        cell?.setupImage(data: articles[indexPath.section].image)
+        cell?.setupImage(image: articles[indexPath.section].image)
         return cell ?? UITableViewCell()
     }
 }
@@ -104,10 +108,10 @@ extension ArticlesViewController: ArticlesDisplayLogic {
         self.tableView?.reloadData()
     }
     
-    func displayImage(data: Data, newsId: Int) {
+    func displayImage(image: UIImage, newsId: Int) {
         for i in 0..<articles.count {
             if articles[i].id == newsId {
-                articles[i].image = data
+                articles[i].image = image
                 self.tableView?.reloadRows(at: [IndexPath(row: 0, section: i)],
                                            with: UITableView.RowAnimation.automatic)
             }

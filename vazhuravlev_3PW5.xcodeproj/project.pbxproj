@@ -14,6 +14,9 @@
 		4897722C27E2CD0A008C3412 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4897722A27E2CD0A008C3412 /* LaunchScreen.storyboard */; };
 		4897723727E2CED5008C3412 /* UIView_Pin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4897723627E2CED5008C3412 /* UIView_Pin.swift */; };
 		4897724C27E32B9D008C3412 /* ArticleModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4897724B27E32B9D008C3412 /* ArticleModel.swift */; };
+		4897725127E33310008C3412 /* ArticlesInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4897725027E33310008C3412 /* ArticlesInteractor.swift */; };
+		4897725427E3332A008C3412 /* ArticlesPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4897725327E3332A008C3412 /* ArticlesPresenter.swift */; };
+		4897725727E3349D008C3412 /* ArticleCellModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4897725627E3349D008C3412 /* ArticleCellModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,6 +30,9 @@
 		4897723627E2CED5008C3412 /* UIView_Pin.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIView_Pin.swift; sourceTree = "<group>"; };
 		4897723927E2D052008C3412 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		4897724B27E32B9D008C3412 /* ArticleModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleModel.swift; sourceTree = "<group>"; };
+		4897725027E33310008C3412 /* ArticlesInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticlesInteractor.swift; sourceTree = "<group>"; };
+		4897725327E3332A008C3412 /* ArticlesPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticlesPresenter.swift; sourceTree = "<group>"; };
+		4897725627E3349D008C3412 /* ArticleCellModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleCellModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -76,6 +82,8 @@
 			isa = PBXGroup;
 			children = (
 				4897722327E2CD09008C3412 /* ArticlesViewController.swift */,
+				4897725027E33310008C3412 /* ArticlesInteractor.swift */,
+				4897725327E3332A008C3412 /* ArticlesPresenter.swift */,
 			);
 			path = ArticlesScene;
 			sourceTree = "<group>";
@@ -84,6 +92,7 @@
 			isa = PBXGroup;
 			children = (
 				4897724B27E32B9D008C3412 /* ArticleModel.swift */,
+				4897725627E3349D008C3412 /* ArticleCellModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -160,7 +169,10 @@
 				4897722427E2CD09008C3412 /* ArticlesViewController.swift in Sources */,
 				4897724C27E32B9D008C3412 /* ArticleModel.swift in Sources */,
 				4897722027E2CD09008C3412 /* AppDelegate.swift in Sources */,
+				4897725127E33310008C3412 /* ArticlesInteractor.swift in Sources */,
+				4897725427E3332A008C3412 /* ArticlesPresenter.swift in Sources */,
 				4897723727E2CED5008C3412 /* UIView_Pin.swift in Sources */,
+				4897725727E3349D008C3412 /* ArticleCellModel.swift in Sources */,
 				4897722227E2CD09008C3412 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -8,7 +8,12 @@
 import UIKit
 
 
+protocol ArticlesDisplayLogic: AnyObject {
+    func displayNews(articles: [ArticleCellModel])
+}
+
 class ArticlesViewController: UIViewController {
+    public var interactor: ArticlesBusinessLogic!
     private var tableView: UITableView?
 
     override func viewDidLoad() {

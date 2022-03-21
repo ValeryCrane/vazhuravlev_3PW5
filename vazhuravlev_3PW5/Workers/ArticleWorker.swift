@@ -16,6 +16,7 @@ class ArticleWorker {
         URLSession.shared.dataTask(with: url) { [weak self] data, responce, error in
             if let error = error {
                 print(error)
+                self?.delegate?.networkError = true
                 return
             }
             if let data = data {

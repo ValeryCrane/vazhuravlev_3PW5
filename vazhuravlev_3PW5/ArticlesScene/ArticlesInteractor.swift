@@ -9,6 +9,7 @@ import Foundation
 
 protocol ArticleDataStore: AnyObject {
     var articles: [ArticleModel] { get set }
+    var networkError: Bool { get set }
 }
 
 protocol ArticlesBusinessLogic: AnyObject {
@@ -19,6 +20,13 @@ class ArticlesInteractor: ArticleDataStore {
     public var presenter: ArticlesPresentationLogic!
     private var worker = ArticleWorker()
     
+    public var networkError = false {
+        didSet {
+            if networkError == true {
+                presenter.presentConnectionError()
+            }
+        }
+    }
     public var articles: [ArticleModel] = [] {
         didSet {
             presenter.presentNews(articles: articles)

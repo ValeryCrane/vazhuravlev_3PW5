@@ -1,3 +1,5 @@
+# WARNING! App doesn't work in Russia right now... Use VPN!!!
+
 #  Articles app
 
 - The project has no storyboard and contains navigation controller. First viewController has tableView.

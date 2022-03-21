@@ -11,6 +11,7 @@ import UIKit
 protocol ArticlesDisplayLogic: AnyObject {
     func displayNews(articles: [ArticleCellModel])          // Displays news with titles and descriptions.
     func displayImage(image: UIImage, newsId: Int)          // Displays image for news id.
+    func displayConnectionError()                           // Displays connection error.
 }
 
 class ArticlesViewController: UIViewController {
@@ -116,5 +117,13 @@ extension ArticlesViewController: ArticlesDisplayLogic {
                                            with: UITableView.RowAnimation.automatic)
             }
         }
+    }
+    
+    func displayConnectionError() {
+        let alert = UIAlertController(title: "Network error",
+                                      message: "Couln't connect to server. Try VPN!",
+                                      preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+        self.present(alert, animated: true, completion: nil)
     }
 }

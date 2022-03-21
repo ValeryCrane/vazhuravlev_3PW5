@@ -11,6 +11,7 @@ import UIKit
 protocol ArticlesPresentationLogic: AnyObject {
     func presentNews(articles: [ArticleModel])          // Presents news into ArticleCellModel.
     func presentImage(data: Data, newsId: Int)          // Presents image to view.
+    func presentConnectionError()                       // Presents connection error on view.
 }
 
 class ArticlesPresenter {
@@ -45,6 +46,12 @@ extension ArticlesPresenter: ArticlesPresentationLogic {
         DispatchQueue.main.async { [weak self] in
             guard let image = UIImage(data: data) else { return }
             self?.view.displayImage(image: image, newsId: newsId)
+        }
+    }
+    
+    func presentConnectionError() {
+        DispatchQueue.main.async { [weak self] in
+            self?.view.displayConnectionError()
         }
     }
 }
